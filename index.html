@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Contact book</title>
+    <script> 
+        function validateForm() {
+            var name = document.getElementById("Name").value;
+            var email = document.getElementById("email").value;
+            var phoneNumber = document.getElementById("phoneNumber").value;
+            var address = document.getElementById("address").value;
+
+            if (name == "" || email == "" || phoneNumber == "" || address == "") {
+                alert("All fields must be filled out");
+                return false;
+            }
+
+            alert("Name: " + name + "\nEmail: " + email + "\nPhone Number: " + phoneNumber + "\nAddress: " + address + "\n\nContact submitted successfully!");
+            return true;
+        }
+    </script>
+    <style> 
+        #car {
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            toppadding: 50px;
+        }
+        #car table {
+            width: 100%;
+        }
+        #car td {
+            padding: 10px;
+        }
+        #car input, #car textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div id="car"> 
+        <form>
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" name="Name" id="Name" pattern="[A-Za-z\s]+" required></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="email" name="email" id="email" pattern="[a-z0-9]+@[a-z0-9.-]+\.[a-z]{2,}$" required></td>
+                </tr>
+                <tr>
+                    <td>Phone Number:</td>
+                    <td><input type="tel" name="phoneNumber" id="phoneNumber" pattern="[0-9]{10}" required></td>
+                </tr>
+                <tr>
+                    <td>Address:</td>
+                    <td><textarea name="address" id="address" rows="10" cols="10" placeholder="Enter your address" required></textarea></td>
+                </tr>
+                <tr>
+                    <td> <button type="submit" colspan="2" onclick="return validateForm();">Submit</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
